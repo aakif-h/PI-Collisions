@@ -22,8 +22,8 @@ public class CollisionMain extends PApplet {
 	}
 	
 	public void draw() {
+		clear();
 		drawBackground();
-		
 		drawBlock(block1);
 		//block2.drawBlock();
 		
@@ -35,18 +35,15 @@ public class CollisionMain extends PApplet {
 	}
 	
 	public void drawBackground() {
-		//gray background
-		fill(150);
-		
 		//dark blue floor
 		fill(0, 25, 51);
 		rect(-1, groundLevel, winX+2, winY - groundLevel);
 	}
 	
 	public void drawBlock(Block b) {
+		
 		fill(76, 153, 0);
 		rect(b.getPosition(), groundLevel - b.getWidth(), b.getWidth(), b.getWidth());
-		
 		b.setPosition(b.getPosition() + b.getVelocity());
 	}
 	
